@@ -21,9 +21,13 @@ st.set_page_config(
 st.title("Cadastro de Clientes")
 st.divider()
 
-nome = st.text_input("Digite o nome do Cliente", key="Nome_cliente")
-dt_nasc = st.date_input("Data de nascimento - Precisar ser maior de idade")
-tipo = st.selectbox("Tipo do cliente", ["Pessoa Física", "Pessoa Jurídica"])
+nome = st.text_input("Digite o nome do Cliente", 
+                     key="Nome_cliente")
+dt_nasc = st.date_input("Data de nascimento - Precisar ser maior de idade",
+                        key="input_data",
+                        format="DD/MM/YYYY")
+tipo = st.selectbox("Tipo do cliente", 
+                    ["Pessoa Física", "Pessoa Jurídica"])
 
 btn_cadastrar = st.button("Cadastrar", on_click=gravar_dados, args=[nome, dt_nasc, tipo])
 
